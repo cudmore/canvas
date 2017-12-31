@@ -52,32 +52,28 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#example-1-in-vivo-canvas">Example 1: In vivo canvas</a></li>
-        <li class="main "><a href="#example-2-ex-vivo-canvas">Example 2: Ex vivo canvas</a></li>
-        <li class="main "><a href="#overview">Overview</a></li>
-        <li class="main "><a href="#hardware-and-software-requirements">Hardware and Software Requirements</a></li>
-        <li class="main "><a href="#interface">Interface</a></li>
-        <li class="main "><a href="#options-panel">Options Panel</a></li>
-            <li><a href="#video-group">Video Group.</a></li>
-            <li><a href="#refresh-2p-squares-group">Refresh 2P Squares Group.</a></li>
-            <li><a href="#serial-port-mp285-group">Serial Port (mp285) group.</a></li>
-            <li><a href="#tcpip-bruker-group">TCP/IP (bruker) group</a></li>
-            <li><a href="#objective-group">Objective Group.</a></li>
-        <li class="main "><a href="#acquiring-video">Acquiring video</a></li>
-        <li class="main "><a href="#controlling-the-objective">Controlling the objective</a></li>
-            <li><a href="#sutter-mp285">Sutter mp285</a></li>
-            <li><a href="#prairie-view">Prairie View</a></li>
-        <li class="main "><a href="#known-problems">Known Problems</a></li>
+        <li class="main active"><a href="#canvas">Canvas</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#hardware-and-software-requirements">Hardware and Software Requirements</a></li>
+            <li><a href="#interface">Interface</a></li>
+            <li><a href="#options-panel">Options Panel</a></li>
+            <li><a href="#acquiring-video">Acquiring video</a></li>
+            <li><a href="#controlling-the-objective">Controlling the objective</a></li>
+            <li><a href="#known-bugs">Known Bugs</a></li>
+            <li><a href="#links">Links</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
+<h1 id="canvas">Canvas</h1>
 <p>Canvas is software to acquire and visualize spatially organized video and image volumes acquired with a scanning microscope.</p>
 <p>This is most useful when performing repeated time-lapse imaging as it allows disjoint images to be acquired and then easily and rapidly returned to on subsequent imaging sessions across timescale of minutes, days, and months.</p>
-<h2 id="example-1-in-vivo-canvas">Example 1: In vivo canvas</h2>
+<h2 id="gallery">Gallery</h2>
+<h3 id="example-1-in-vivo-canvas">Example 1: In vivo canvas</h3>
 <p><IMG SRC="img/canvas-example-1.png" width=600></p>
 <p>In this example screen-shot, the gray images are an automatically created mosaic of surface vasculature images from a video camera looking down into a cranial window. The green squares are the position of image stacks acquired with a scanning microscope. The Canvas software seamlessly integrates with <a href="http://blog.cudmore.io/mapmanager">Map Manager</a> providing point and click navigation, browsing, and annotations of all image stacks.</p>
-<h2 id="example-2-ex-vivo-canvas">Example 2: Ex vivo canvas</h2>
+<h3 id="example-2-ex-vivo-canvas">Example 2: Ex vivo canvas</h3>
 <p><IMG SRC="img/canvas-example-slice.png" width=475 align=left></p>
 <p><IMG SRC="img/canvas-example-slice-2.png" width=300 align=right></p>
 <div class="print-page-break"></div>
@@ -147,8 +143,9 @@
 <p>If the video camera on your scope has an analog signal, there are very inexpensive video to usb converters. We regularly use EasyCap DC60 converters ($10-$20). Converters like this take an analog video signal, convert it to USB and then single frames or video is captured within Igor Pro using their free driver.</p>
 <p>High end USB2/3 cameras will generally work but the size of the frame acquired by Igor may be smaller than the sensor. To circumvent this, we have a video viewer/capture script written in Matlab that saves full FOV images from a usb camera that is then automatically loaded into Igor.</p>
 <h2 id="controlling-the-objective">Controlling the objective</h2>
+<p>The position of the objective is read and the objective can be moved from within the canvas.</p>
 <h3 id="sutter-mp285">Sutter mp285</h3>
-<p>Both ScanImage and Igor need to read the position and move the motorized objective (usually a Sutter mp285). This is done by communicating with one physical serial-port, a COM port. Microsoft Windows only allows one program to communicate with each physical serial-port but we need both Matlab and Igor to communicate with the same COM port. Thus ,we use third-party software to split the physical COM port into two virtual ports, one for Matlab and one for Igor.</p>
+<p>Both ScanImage and Igor need to read the position and move the motorized objective. This is done by communicating with one physical serial-port, a COM port. Microsoft Windows only allows one program to communicate with each physical serial-port but we need both Matlab and Igor to communicate with the same COM port. Thus, we use third-party software to split the physical COM port into two virtual ports, one for Matlab and one for Igor.</p>
 <p>There are a few different programs to create virtual COM ports from one physical COM port.</p>
 <ul>
 <li>Windows 7: Serial Splitter 5.0 (Eltima Software), $100. As of Aug 2014 this is what we are using and it is working well.</li>
@@ -158,9 +155,14 @@
 </ul>
 <h3 id="prairie-view">Prairie View</h3>
 <p>The Canvas software communicates with Prairie View over a TCP/IP (localhost) connection using Igor's SOCKIT library.</p>
-<h2 id="known-problems">Known Problems</h2>
+<h2 id="known-bugs">Known Bugs</h2>
 <ul>
 <li>If you enter a space in your scanimage file name, your mp285 canvas will not work properly. If you realize this after you have already created a canvas with ‘Import Scanimage’, manually change the space in each scan image .tif file (on the hard-drive) to an underscore (_). Do NOT simply delete the space, you must change it to an underscore.</li>
+</ul>
+<h2 id="links">Links</h2>
+<ul>
+<li><a href="http://robertcudmore.org">Robert Cudmore's homepage</a></li>
+<li><a href="http://blog.cudmore.io/mapmanager">Map Manager</a></li>
 </ul></div>
         </div>
 
@@ -243,6 +245,6 @@
 </html>
 
 <!--
-MkDocs version : 0.17.1
-Build Date UTC : 2017-12-31 05:21:19
+MkDocs version : 0.17.2
+Build Date UTC : 2017-12-31 20:19:37
 -->
