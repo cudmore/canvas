@@ -1,0 +1,20 @@
+site_name: Canvas
+
+theme:
+  #name: 'material'
+  #name: 'readthedocs'
+  name: 'mkdocs'
+
+#theme_dir : custom_theme
+
+extra_css:
+    - css/extra.css
+
+#repo_url: http://github.com/cudmore/Canvas
+
+edit_uri: ''
+
+#pages:
+#    - Home: index.md
+
+copyright: Canvas is designed and implemented by <A HREF="http://robertcudmore.org">Robert Cudmore</a>
