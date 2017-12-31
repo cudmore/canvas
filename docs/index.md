@@ -1,14 +1,18 @@
+# Canvas
+
 Canvas is software to acquire and visualize spatially organized video and image volumes acquired with a scanning microscope.
 
 This is most useful when performing repeated time-lapse imaging as it allows disjoint images to be acquired and then easily and rapidly returned to on subsequent imaging sessions across timescale of minutes, days, and months.
 
-## Example 1: In vivo canvas
+## Gallery
+
+### Example 1: In vivo canvas
 
 <IMG SRC="img/canvas-example-1.png" width=600>
 
 In this example screen-shot, the gray images are an automatically created mosaic of surface vasculature images from a video camera looking down into a cranial window. The green squares are the position of image stacks acquired with a scanning microscope. The Canvas software seamlessly integrates with [Map Manager][map manager] providing point and click navigation, browsing, and annotations of all image stacks.
 
-## Example 2: Ex vivo canvas
+### Example 2: Ex vivo canvas
 
 <IMG SRC="img/canvas-example-slice.png" width=475 align=left>
 
@@ -106,9 +110,11 @@ High end USB2/3 cameras will generally work but the size of the frame acquired b
 
 ## Controlling the objective
 
+The position of the objective is read and the objective can be moved from within the canvas.
+
 ### Sutter mp285
 
-Both ScanImage and Igor need to read the position and move the motorized objective (usually a Sutter mp285). This is done by communicating with one physical serial-port, a COM port. Microsoft Windows only allows one program to communicate with each physical serial-port but we need both Matlab and Igor to communicate with the same COM port. Thus ,we use third-party software to split the physical COM port into two virtual ports, one for Matlab and one for Igor.
+Both ScanImage and Igor need to read the position and move the motorized objective. This is done by communicating with one physical serial-port, a COM port. Microsoft Windows only allows one program to communicate with each physical serial-port but we need both Matlab and Igor to communicate with the same COM port. Thus, we use third-party software to split the physical COM port into two virtual ports, one for Matlab and one for Igor.
 
 There are a few different programs to create virtual COM ports from one physical COM port.
 
@@ -122,10 +128,15 @@ There are a few different programs to create virtual COM ports from one physical
 The Canvas software communicates with Prairie View over a TCP/IP (localhost) connection using Igor's SOCKIT library.
 
 
-## Known Problems
+## Known Bugs
 
  - If you enter a space in your scanimage file name, your mp285 canvas will not work properly. If you realize this after you have already created a canvas with ‘Import Scanimage’, manually change the space in each scan image .tif file (on the hard-drive) to an underscore (_). Do NOT simply delete the space, you must change it to an underscore.
 
+## Links
+
+ - [Robert Cudmore's homepage](http://robertcudmore.org)
+ - [Map Manager][map manager]
+ 
 [map manager]: http://blog.cudmore.io/mapmanager
 [wavemetrics]: www.wavemetrics.com
 [mp285]: https://www.sutter.com/MICROMANIPULATION/mp285.html
