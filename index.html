@@ -53,13 +53,18 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#canvas">Canvas</a></li>
+            <li><a href="#features">Features</a></li>
             <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#overview">Overview</a></li>
             <li><a href="#hardware-and-software-requirements">Hardware and Software Requirements</a></li>
-            <li><a href="#interface">Interface</a></li>
+            <li><a href="#canvas-panel">Canvas Panel</a></li>
+            <li><a href="#canvas-motor-controls">Canvas Motor Controls</a></li>
             <li><a href="#options-panel">Options Panel</a></li>
             <li><a href="#acquiring-video">Acquiring video</a></li>
             <li><a href="#controlling-the-objective">Controlling the objective</a></li>
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#running-canvas">Running canvas</a></li>
+            <li><a href="#off-line-analysis">Off line analysis</a></li>
+            <li><a href="#default-user-file">Default User File</a></li>
             <li><a href="#known-bugs">Known Bugs</a></li>
             <li><a href="#links">Links</a></li>
     </ul>
@@ -69,23 +74,22 @@
 <h1 id="canvas">Canvas</h1>
 <p>Canvas is software to acquire and visualize spatially organized video and image volumes acquired with a scanning microscope.</p>
 <p>This is most useful when performing repeated time-lapse imaging as it allows disjoint images to be acquired and then easily and rapidly returned to on subsequent imaging sessions across timescale of minutes, days, and months.</p>
-<h2 id="gallery">Gallery</h2>
-<h3 id="example-1-in-vivo-canvas">Example 1: In vivo canvas</h3>
-<p><IMG SRC="img/canvas-example-1.png" width=600></p>
-<p>In this example screen-shot, the gray images are an automatically created mosaic of surface vasculature images from a video camera looking down into a cranial window. The green squares are the position of image stacks acquired with a scanning microscope. The Canvas software seamlessly integrates with <a href="http://blog.cudmore.io/mapmanager">Map Manager</a> providing point and click navigation, browsing, and annotations of all image stacks.</p>
-<h3 id="example-2-ex-vivo-canvas">Example 2: Ex vivo canvas</h3>
-<p><IMG SRC="img/canvas-example-slice.png" width=475 align=left></p>
-<p><IMG SRC="img/canvas-example-slice-2.png" width=300 align=right></p>
-<div class="print-page-break"></div>
-
-<p>This is an example of a Canvas acquired during two-photon imaging and electrophysiology in a cerebellar slice. The first image is an overview of the canvas and the second is a zoomed in view of the recording and imaging areas.</p>
-<h2 id="overview">Overview</h2>
+<h3 id="features">Features</h3>
 <ul>
 <li>Create a Canvas that visually places each video image and scanned images into a unified ‘motor space’.</li>
 <li>Previous canvases can be loaded and displayed using the Map Manager Stack Browser.</li>
 <li>Quickly and easily acquire the same fields-of-view both within and between time-points spanning minutes, hours, days and months.</li>
 </ul>
-<p>This is designed to work on any scope that has a computer controlled objective or stage. It has been tested using x/y/z objective motors using a Sutter mp285 controller and a Bruker Scope using Prairie View software.</p>
+<h2 id="gallery">Gallery</h2>
+<p><IMG SRC="img/canvas-example-3.png" width=600></p>
+<p><strong>Example 1.</strong> Screen shot of a canvas during an in vivo experiment. Gray images are a mosaic of video images of surface vasculature visualized through a cranial window. Green images are maximal intensity z-projections of in vivo two photon volumes (6 in total). All images are linked, clicking on one will bring up the full image volume. </p>
+<p><IMG SRC="img/canvas-example-1.png" width=600></p>
+<p><strong>Example 2.</strong> The gray images are an automatically created mosaic of surface vasculature images from a video camera looking down into a cranial window. The green squares are the position of image stacks acquired with a scanning microscope. The Canvas software seamlessly integrates with <a href="http://blog.cudmore.io/mapmanager">Map Manager</a> providing point and click navigation, browsing, and annotations of all image stacks.</p>
+<p><IMG SRC="img/canvas-example-slice.png" width=475 align=left></p>
+<p><IMG SRC="img/canvas-example-slice-2.png" width=300 align=right></p>
+<div class="print-page-break"></div>
+
+<p><strong>Example 3.</strong> This is an example of a Canvas acquired during two-photon imaging and electrophysiology in a cerebellar slice. The first image is an overview of the canvas and the second is a zoomed in view of the recording and imaging areas.</p>
 <h2 id="hardware-and-software-requirements">Hardware and Software Requirements</h2>
 <ul>
 <li>Windows 7 or Windows XP</li>
@@ -106,7 +110,7 @@
 </li>
 </ul>
 <p><IMG SRC="img/canvas-scope-panel.png" width=350 align=right></p>
-<h2 id="interface">Interface</h2>
+<h2 id="canvas-panel">Canvas Panel</h2>
 <p><strong>X/Y/Z</strong>. Gives the current position of the motor.</p>
 <p><strong>Read Position</strong>. Reads the current motor position.</p>
 <p><strong>Zero X/Y</strong> and <strong>Zero Z</strong>. Zero the current position in the Canvas software. This does not move the onjective but is useful to be able to read absolute distances moved.</p>
@@ -117,6 +121,10 @@
 <p><strong>HDD</strong>. Show the hard-disk-drive folder for the current session.</p>
 <p><strong>Display Canvas</strong>. Display the current canvas. The current canvas is created when a session is initialized with ‘Initialize Session’.</p>
 <p><strong>Finalize and clear canvas</strong>. Used at the end of an imaging session to close the current canvas.</p>
+<div class="print-page-break"></div>
+
+<h2 id="canvas-motor-controls">Canvas Motor Controls</h2>
+<p><IMG SRC="img/canvas-motor-contorls.png" width=600 align=right></p>
 <div class="print-page-break"></div>
 
 <p><IMG SRC="img/canvas-scope-options.png" width=350 align=right></p>
@@ -155,6 +163,98 @@
 </ul>
 <h3 id="prairie-view">Prairie View</h3>
 <p>The Canvas software communicates with Prairie View over a TCP/IP (localhost) connection using Igor's SOCKIT library.</p>
+<h2 id="installation">Installation</h2>
+<p>Canvas is designed to work on any scope that has a computer controlled objective or stage. It has been tested using x/y/z objective motors using a Sutter mp285 controller and a Bruker Scope using Prairie View software.</p>
+<h3 id="mp285-motor-controller">mp285 motor controller</h3>
+<ul>
+<li>Install <a href="https://www.eltima.com/products/serialsplitter/">Serial Splitter 5</a></li>
+<li>Make 2 virtual serial ports from the COM port the mp285 is plugged into</li>
+<li>Rewrite ScanImage startup script to use one of the virtual COM ports</li>
+<li>Make sure Igor is using the other virtual COM port</li>
+</ul>
+<h3 id="bruker-motor-controller">Bruker motor controller</h3>
+<p>For Bruker Prairie View, we need the Igor SOCKIT extension.
+    - Download <a href="http://www.igorexchange.com/project/SOCKIT">SOCKIT</a>
+    - Uncompress and install SOCKIT XOP into Igor Pro 6
+    - Once this is done, motor position will be read and motor will be moved using a localhost TCP/IP protocol</p>
+<h2 id="running-canvas">Running canvas</h2>
+<ul>
+<li>Open Igor 6</li>
+<li>Open PrairieCanvas.ipf</li>
+<li>Compile procedures by clicking on the Igor command window</li>
+<li>
+<p>Select menu 'Canvas - Load User' and select a user .txt file. This will open the main canvas panel.</p>
+</li>
+<li>
+<p>Create a new canvas by entering a 'session ID' and pressing 'Initialize Session'. This will open a new canvas window with motor controls.   </p>
+</li>
+<li>
+<p>Show a preview of the USB video camera with the 'Preview' button.</p>
+</li>
+<li>The red square in the canvas shows the current motor position.</li>
+<li>Move the motor with arrow buttons. The red square should update its positon. IF it does not, try the movement again.</li>
+<li>
+<p>Capture video with 'Capture Video' and the video will be placed in the current position within the canvas.</p>
+</li>
+<li>
+<p>Scan some images in either Scan Image or Prairie View and then hit 'Import From Scope' to import these images into the canvas. The images will appear as squares in the canvas. Selecting a square will highlight the stack in the Stack Browser and the stack can be opened directly into Igor.</p>
+</li>
+</ul>
+<p>The canvas is automatically saved as new video and scope images are created and imported.</p>
+<h2 id="off-line-analysis">Off line analysis</h2>
+<ul>
+<li>Run Map Manager and open the Stack Browser</li>
+<li>Select 'Load Canvas' and load your canvas. The canvas file will be in a session folder and will always start with 'c'.</li>
+</ul>
+<h2 id="default-user-file">Default User File</h2>
+<pre><code>#mp285 configuration file
+#Robert Cudmore
+#create Dec 31, 2013
+
+
+#prairie specific
+root:MapManager3:options:mp285:prairiePath=&quot;f:\cudmore\data&quot;
+
+#mp285 specific
+root:MapManager3:options:mp285:gSavePath=&quot;f:cudmore:data:&quot;
+root:MapManager3:options:mp285:gUserSerialMotor=0
+root:MapManager3:options:mp285:gFlipVideoHorizontal=0
+root:MapManager3:options:mp285:prairieSleepTime_ms=200
+#root:bObjective:gSelObjStr=&quot;p20x&quot;
+
+
+#session db path
+root:MapManager3:options:stackdb:gSessionDir=&quot;f:cudmore:data:&quot;
+
+root:bStack:gYearAndMonthFolders=0
+
+#canvas
+#allow video selections
+root:Canvas:gAllowVideoSel = 0
+
+#in canvas each stack square gets a number (if == 0 then # is object index in the canvas)
+root:Canvas:gScanImageIndexForName = 1
+
+#display motor control bar by default
+root:Canvas:gShowMotorByDefault = 1
+
+#right click a canvas and select 'set window width'
+root:Canvas:gWindowWidth = 474.75
+
+#right click a stack and select 'set window size'
+root:Scale:width = 767.5
+
+#20170403 need to fix this
+root:bObjective:gSelObjStr=&quot;p20x2&quot;
+
+#20171116, this specidies video sensor pixels (not 2p pixels)
+root:MapManager3:options:mp285:pixelsPerLine=1920
+root:MapManager3:options:mp285:linesPerFrame=1200
+
+root:MapManager3:options:mp285:gCaptureVideoFromMatlab=1
+root:MapManager3:options:mp285:gRaspberryIP=&quot;http://10.16.81.61:5010&quot;
+</code></pre>
+
 <h2 id="known-bugs">Known Bugs</h2>
 <ul>
 <li>If you enter a space in your scanimage file name, your mp285 canvas will not work properly. If you realize this after you have already created a canvas with ‘Import Scanimage’, manually change the space in each scan image .tif file (on the hard-drive) to an underscore (_). Do NOT simply delete the space, you must change it to an underscore.</li>
@@ -246,5 +346,5 @@
 
 <!--
 MkDocs version : 0.17.2
-Build Date UTC : 2017-12-31 20:19:37
+Build Date UTC : 2018-01-01 03:41:54
 -->
