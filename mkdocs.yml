@@ -4,6 +4,7 @@ theme:
   #name: 'material'
   #name: 'readthedocs'
   name: 'mkdocs'
+  #name: 'cinder'
 
 #theme_dir : custom_theme
 
@@ -14,7 +15,7 @@ extra_css:
 
 edit_uri: ''
 
-#pages:
-#    - Home: index.md
+pages:
+    - Home: index.md
 
 copyright: Canvas is designed and implemented by <A HREF="http://robertcudmore.org">Robert Cudmore</a>
